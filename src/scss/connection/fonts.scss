@@ -1,0 +1,24 @@
+@mixin fontFace($fontName, $nameLocalFonts, $linkFontsOne, $typeFontsOne, $linkFontsTwo, $typeFontsTwo, $fontWeight) {
+    $link: '../';
+    font-family: $fontName; // имя шрифта
+    src: local($nameLocalFonts), url($link+$linkFontsOne) format($typeFontsOne),
+        url($link+$linkFontsTwo) format($typeFontsTwo);
+    font-style: normal;
+    font-weight: $fontWeight;
+}
+
+@font-face {
+    @include fontFace('Roboto', 'Roboto Thin', "fonts/Robotothin.woff2", "woff2", "fonts/Robotothin.woff", "woff", 100)
+}
+
+@font-face {
+    @include fontFace('Roboto', 'Roboto light', "fonts/Robotolight.woff2", "woff2", "fonts/Robotolight.woff", "woff", 300)
+}
+
+@font-face {
+    @include fontFace('Roboto', 'Roboto', "fonts/Roboto.woff2", "woff2", "fonts/Roboto.woff", "woff", 400)
+}
+
+@font-face {
+    @include fontFace('Roboto', 'Roboto bold', "fonts/Robotobold.woff2", "woff2", "fonts/Robotobold.woff", "woff", 700)
+}
